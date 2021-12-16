@@ -108,19 +108,19 @@ under the License.
         <enabled>false</enabled>
       </snapshots>
     </repository>
-    <repository>
-      <!--
-      This is a transitive dependency from Sentry. Disable downloading snapshots from here
-      since we only want to consume actual releases and we can save Maven from reaching
-      out to this repo unnecessarily to look for snapshot versions.
-      -->
-      <id>glassfish-repo-archive.repo</id>
-      <name>Glassfish repository - Transitive from Sentry</name>
-      <url>https://mvnrepository.com/artifact/org.glassfish/javax.el/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
+    <!--    <repository>-->
+    <!--
+    This is a transitive dependency from Sentry. Disable downloading snapshots from here
+    since we only want to consume actual releases and we can save Maven from reaching
+    out to this repo unnecessarily to look for snapshot versions.
+    -->
+    <!--      <id>glassfish-repo-archive.repo</id>-->
+    <!--      <name>Glassfish repository - Transitive from Sentry</name>-->
+    <!--      <url>https://mvnrepository.com/artifact/org.glassfish/javax.el/</url>-->
+    <!--      <snapshots>-->
+    <!--        <enabled>false</enabled>-->
+    <!--      </snapshots>-->
+    <!--    </repository>-->
     <repository>
       <!--
       The Impala development bootstrapping depends on CDH Maven snapshots
@@ -132,7 +132,7 @@ under the License.
       incompatibility issues.
       -->
       <id>cdh.snapshots.repo</id>
-      <url>https://repository.cloudera.com/content/repositories/snapshots</url>
+      <url>https://repository.cloudera.com/artifactory/libs-snapshot</url>
       <name>CDH Snapshots Repository</name>
       <releases>
         <enabled>false</enabled>
@@ -143,7 +143,7 @@ under the License.
     </repository>
     <repository>
       <id>cdh.rcs.releases.repo</id>
-      <url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
+      <url>https://repository.cloudera.com/artifactory/cdh-releases-rcs</url>
       <name>CDH Releases Repository</name>
       <snapshots>
         <enabled>true</enabled>
@@ -192,14 +192,14 @@ under the License.
         <enabled>${env.IMPALA_TOOLCHAIN_KUDU_MAVEN_REPOSITORY_ENABLED}</enabled>
       </snapshots>
     </repository>
-    <repository>
-      <id>cloudera.thirdparty.repo</id>
-      <url>https://repository.cloudera.com/content/repositories/third-party</url>
-      <name>Cloudera Third Party Repository</name>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
+    <!--    <repository>-->
+    <!--      <id>cloudera.thirdparty.repo</id>-->
+    <!--      <url>https://repository.cloudera.com/content/repositories/third-party</url>-->
+    <!--      <name>Cloudera Third Party Repository</name>-->
+    <!--      <snapshots>-->
+    <!--        <enabled>false</enabled>-->
+    <!--      </snapshots>-->
+    <!--    </repository>-->
     <repository>
       <!--
       HWX Nexus is disabled. This is a tombstone to list out why:
@@ -232,9 +232,9 @@ under the License.
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>cloudera.thirdparty.repo</id>
-      <url>https://repository.cloudera.com/content/repositories/third-party</url>
-      <name>Cloudera Third Party Repository</name>
+      <id>cdh.rcs.releases.repo</id>
+      <url>https://repository.cloudera.com/artifactory/cdh-releases-rcs</url>
+      <name>CDH Releases Repository</name>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
