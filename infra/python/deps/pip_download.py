@@ -40,7 +40,7 @@ except ImportError:
 
 NUM_DOWNLOAD_ATTEMPTS = 8
 
-PYPI_MIRROR = os.environ.get('PYPI_MIRROR', 'https://pypi.python.org')
+PYPI_MIRROR = os.environ.get('PYPI_MIRROR', 'http://maven.keendata.com:8081/repository/pypi-proxy')
 
 # The requirement files that list all of the required packages and versions.
 REQUIREMENTS_FILES = ['requirements.txt', 'stage2-requirements.txt',
